@@ -5,11 +5,12 @@ import ItenListContainer from './components/ItenListContainer'
 
 function App() {
 
+  const contenido = "Nuestro café";
   return (
     <>
       <div>
         <Header/>
-        <ItenListContainer/>
+        <ItenListContainer mensaje={contenido}/>
       </div>
     </>
   )

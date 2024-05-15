@@ -1,8 +1,10 @@
 import React from 'react'
 
-const ItenListContainer = () => {
+const ItenListContainer = (props) => {
+  const {mensaje} =props
+
   return (
-    <div className='productos'>Nuestro café</div>
+    <div className='productos'>{mensaje}</div>
   )
 }
 
