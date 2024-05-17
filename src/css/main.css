@@ -5,7 +5,7 @@
 }
 
 .header{
-  background-image: url(public/coffee-beans-top-view-white-background-space-text.webp) ;
+  background-image: url(./coffee-beans-top-view-white-background-space-text.webp) ;
   background-size: 100% 257%;
   background-repeat: no-repeat;
   width: 100%;
@@ -17,16 +17,22 @@
 }
 
 .navbar{
-/*  display: flex;
-  justify-content: space-between;*/
   gap: 2rem;
-  width: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.menu{
+  width: inherit;
 }
 
 .nav-list{
   list-style-type: none;
+  max-width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-evenly;
   gap: .5rem;
 }
 
@@ -34,6 +40,10 @@
   text-decoration: none;
   color: #f0f0d8;
   font-size: xx-large;
+}
+
+.carrito{
+  width: 5rem;
 }
 
 .productos{
@@ -45,5 +55,5 @@
 }
 
 .logo{
-  border-radius: 30% 10%;
+  border-radius: 50% 50%;
 }
