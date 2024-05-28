@@ -2,12 +2,13 @@ import React from 'react'
 import NavBar from './NavBar'
 import CartWidget from './CartWidget'
 
-export const Header = () => {
+const Header = (props) => {
+
     return (
         <header className='header'>
-            
             <NavBar />
-            <CartWidget/>
+            <CartWidget numeroCarrito={props.numeroCarrito}/>
         </header>
     )
 }
+export default Header

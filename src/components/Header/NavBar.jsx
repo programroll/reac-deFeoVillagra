@@ -16,7 +16,7 @@ const NavBar = () => {
       <div className='menu'>
         <ul className='nav-list'>
           <li className='nav-item'><a className='nav-a' href="#">Experiencia Coffe</a></li>
-          <li className='nav-item'><a className='nav-a' href="#">#######</a></li>
+          <li className='nav-item'><a className='nav-a' href="#">Contacto</a></li>
         </ul>
       </div>
     </nav>

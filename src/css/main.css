@@ -46,6 +46,10 @@
   width: 5rem;
 }
 
+.logo{
+  border-radius: 50% 50%;
+}
+
 .productos{
   background-color:#F7EDE6;
   margin-bottom: auto;
@@ -54,6 +58,7 @@
 
 }
 
-.logo{
-  border-radius: 50% 50%;
+.footer{
+  display: flex;
+  justify-content: end;
 }
