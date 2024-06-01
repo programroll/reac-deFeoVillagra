@@ -20,7 +20,7 @@ const ItenListContainer = () => {
   }, [])
 
   return (
-    <div>
+    <div className='itemContainer'>
       <h2>Productos</h2>
       <ListaLocal productos={productos}/>
     </div>

@@ -2,11 +2,11 @@ import React from 'react'
 
 const Item = ({producto}) => {
   return (
-    <div>
+    <div className='card'>
       <img src ={producto.imagen}/>
       <h2>{producto.nombre}</h2>
-      <p>${producto.precio}</p>
       <p>{producto.descripcion}</p>
+      <p>${producto.precio}</p>
     </div>
   )
 }
