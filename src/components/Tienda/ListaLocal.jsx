@@ -7,7 +7,7 @@ const ListaLocal = ({ productos }) => {
             {
                 productos.length > 0 ? productos.map(producto => {
                     return <Item key={producto.id} producto={producto}
-                    />}) : <p>No hay productos</p>
+                    />}) : <p>Cargando..</p>
             }
         </div>
     )

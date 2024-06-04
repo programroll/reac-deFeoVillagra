@@ -42,12 +42,24 @@
   font-size: xx-large;
 }
 
+.nav-a.active{
+  font-weight: bold;
+
+}
+
 .carrito{
   width: 5rem;
 }
 
 .logo{
   border-radius: 50% 50%;
+}
+
+.foto-cafe{
+  float: left;
+  width: 30rem;
+  height: 15rem;
+  margin-left: 1rem;
 }
 
 .productos{

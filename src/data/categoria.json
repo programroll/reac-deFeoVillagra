@@ -1,0 +1,14 @@
+[
+    {
+        "id":"alta-montaña",
+        "nombre": "Alta montaña"
+    },
+    {
+        "id":"selva-misionera",
+        "nombre":"Selva Misionera"
+    },
+    {
+        "id":"litoral",
+    "nombre":"Litoral"
+    }
+]
