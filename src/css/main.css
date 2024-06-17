@@ -5,7 +5,7 @@
 }
 
 .header{
-  background-image: url(./coffee-beans-top-view-white-background-space-text.webp) ;
+  background-image: url(./public/header.webp) ;
   background-size: 100% 257%;
   background-repeat: no-repeat;
   width: 100%;
@@ -55,11 +55,41 @@
   border-radius: 50% 50%;
 }
 
+
+.opciones-container{
+  position: relative;
+
+}
+
+.opciones-container:hover .opciones{
+  display: block;
+}
+.opciones{
+  text-decoration: none;
+  display: none;
+  background-color:#967c52;
+  border-radius: 0 0 10px 10px;
+  list-style-type: none;
+  text-align: center;
+  
+
+}
+
+.text-productos{
+  text-decoration: none;
+  color: #f0f0d8;
+}
+
+.text-productos:hover {
+  text-shadow: 0px 0px 10px #F7EDE6;
+  transition: .2s;
+}
+
 .foto-cafe{
   float: left;
   width: 30rem;
   height: 15rem;
-  margin-left: 1rem;
+  margin: 1rem;
 }
 
 .productos{
@@ -67,7 +97,6 @@
   margin-bottom: auto;
   display: flex;
   justify-content: center;
-
 }
 
 .footer{
@@ -91,9 +120,111 @@
 
 .card{
   width: 15rem;
-  height: 15rem;
-  overflow: auto;
+  height: 18rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.card img{
+  width: 100%;
+  height: 10rem;
+}
+
+.item-detail{
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  width: 50%;
+
+}
+.detail img{
+  grid-column:1;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+.detail h2, .descripcion {
+  grid-column:2;
+  margin:auto;
+  width: 100%;
+}
+
+.precio{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: auto;
+}
+
+.item-count{
+  display: flex;
+  flex-direction: column;
+}
+
+.count{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.count button, .agregar {
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #967c52;
+  border: 0;
+  width: 2rem;
+  height: 2rem;
+  color: #f0f0d8;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border: 2px solid #f0f0d8;
+  transition: .2s;
+}
+
+.count button:hover, .agregar:hover{
+  background-color: #ffecd1 ;
+  color: black;
+}
+
+.agregar{
+  width: auto;
+  height: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.nosotros{
+  margin:1rem
+}
+
+.foto-plantacion{
+  float:right;
+  width: 30rem;
+  height: 15rem;
+  margin-right: 1rem;
+  
+}
+
+.historia{
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.historia p{
+  font-size:larger;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  
 }

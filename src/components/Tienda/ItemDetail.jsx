@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import ItemCount from './ItemCount'
 
 const ItemDetail = ({ item }) => {
+
     return (
-        <div>
+        < div className='item-detail'>
+        <div className='detail'>
             <img src={item.imagen} />
             <h2>{item.nombre}</h2>
-            <p>{item.descripcion}</p>
-            <p>${item.precio}</p>
+            <p className='descripcion'>{item.descripcion}</p>
+            <p className='precio'>${item.precio}</p>
+            <ItemCount item={item}/>
+        </div>
         </div>
     )
 }

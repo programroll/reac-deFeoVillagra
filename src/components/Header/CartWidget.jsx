@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Basket2 } from 'react-bootstrap-icons'
+import { CartContext } from '../context/CartContext';
+import { Link } from 'react-router-dom';
 
-const Carrito = (props) => {
+const CartWidget = () => {
     
+    const {calcularCantidad} =useContext(CartContext);
     return (
-        <div className='carrito'>
-            <Basket2 color='#f0f0d8' size={35}/>{props.numeroCarrito}
-        </div>
+        <Link className='carrito' to="/carrito">
+            <Basket2 color='#f0f0d8' size={35}/>{calcularCantidad()}
+        </Link>
     )
 }
 
-export default Carrito
+export default CartWidget

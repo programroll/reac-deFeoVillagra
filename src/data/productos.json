@@ -8,7 +8,8 @@
         "categoria": {
             "id":"alta-montaña",
             "nombre": "Alta montaña"
-        }
+        },
+        "stock": 10
     },
     {
         "id": 2,
@@ -19,18 +20,20 @@
         "categoria": {
         "id":"selva-misionera",
         "nombre":"Selva Misionera"
-        }
+        },
+        "stock": 10
     },
     {
         "id": 3,
         "nombre": "Café Molido- Litoral",
         "precio": 11.79,
-        "imagen": "https://iili.io/H8Y7r4s.webp",
+        "imagen": "/public/producto-cafe.webp",
         "descripcion": "Explora los sabores únicos del café de litoral con esta selección de café molido. Con sus notas florales y afrutadas, este café te ofrecerá una experiencia sensorial incomparable.",
         "categoria": {
             "id":"litoral",
         "nombre":"Litoral"
-        }
+        },
+        "stock": 10
     },
     {
         "id": 4,
@@ -41,7 +44,8 @@
         "categoria": {
             "id":"alta-montaña",
         "nombre": "Alta montaña"
-        }
+        },
+        "stock": 10
     },
     {
         "id": 5,
@@ -52,17 +56,19 @@
         "categoria": {
             "id":"selva-misionera",
         "nombre":"Selva Misionera"
-        }
+        },
+        "stock": 10
     },
     {
         "id": 6,
         "nombre": "Café en Grano Argentino - Litoral",
         "precio": 13.79,
-        "imagen": "https://iili.io/H8Y7r4s.webp",
+        "imagen": "/public/producto-cafe.webp",
         "descripcion": "Disfruta de la frescura y la vitalidad del café en grano argentino cultivado en la región del Litoral. Con un perfil de sabor único que combina notas de nueces y caramelo, este café ofrece una experiencia deliciosa y reconfortante en cada taza.",
         "categoria": {
             "id":"litoral",
         "nombre":"Litoral"
-        }
+        },
+        "stock": 10
     }
 ]

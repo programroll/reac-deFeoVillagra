@@ -9,39 +9,37 @@ const NavBar = () => {
     <nav className='navbar'>
       <div className='menu'>
         <ul className='nav-list'>
-          <li className='nav-item'>
+          <li>
             <NavLink to="/" activeclassname="active" className='nav-a'>Nosotros</NavLink>
           </li>
-          <li className='nav-item'>
+          <li className='opciones-container'>
             <NavLink className='nav-a' to="/productos">Productos</NavLink>
-            <ul>
+            <ul className='opciones'>
               {
                 categoria.map((categoria) => {
-                  return (
-                    <li className="nav-item" key={categoria.id}>
-                      <NavLink to={`/categoria/${categoria.id}`} className="nav-a">
-                        {categoria.nombre}
-                      </NavLink>
-                    </li>
-                  )
+                  return(
+                  <li key={categoria.id}>
+                    <NavLink to={`/categoria/${categoria.id}`} className="text-productos">
+                      {categoria.nombre}
+                    </NavLink>
+                  </li>)
                 })
               }
-
             </ul>
           </li>
         </ul>
       </div >
       <div>
         <Link to="/">
-        <img src="./Preview.webp" alt="logo" className='logo' />
-      </Link>
+          <img src="./Preview.webp" alt="logo" className='logo' />
+        </Link>
       </div>
       <div className='menu'>
         <ul className='nav-list'>
-          <li className='nav-item'>
+          <li>
             <Link className='nav-a' to="#">Experiencia Coffe</Link>
           </li>
-          <li className='nav-item'>
+          <li>
             <Link className='nav-a' to="#">Contacto</Link>
           </li>
         </ul>
