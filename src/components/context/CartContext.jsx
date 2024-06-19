@@ -8,9 +8,10 @@ export const CartProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
 
     const agregarAlCarrito = (item, cantidad) => {
+
         const agregado ={...item,cantidad};
         const carritoLleno = [...carrito];
-        const estaAgregado = carritoLleno.find ((producto)=> producto.id ===agregado.id);
+        const estaAgregado = carritoLleno.find ((producto)=> producto.id === agregado.id);
 
         if(estaAgregado){
             estaAgregado.cantidad += cantidad;
@@ -18,11 +19,11 @@ export const CartProvider = ({ children }) => {
             carritoLleno.push(agregado);
         }
 
-        setCarrito([carritoLleno]);
+        setCarrito( carritoLleno);
     }
 
     const calcularCantidad = () => {
-        return carrito.length;
+        return carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
     }
 
     const calcularTotal = () => {

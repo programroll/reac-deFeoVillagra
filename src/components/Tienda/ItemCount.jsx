@@ -14,7 +14,7 @@ const ItemCount = ({item}) => {
     }
 
     const sumar =()=>{
-        cantidad <10 && setCantidad(cantidad+1);
+        cantidad < item.stock && setCantidad(cantidad+1);
     }
 
 
@@ -25,7 +25,7 @@ const ItemCount = ({item}) => {
                 <p>{cantidad}</p>
                 <button onClick={sumar}>+</button>
             </div>
-            <button className="agregar" onClick={()=>agregarAlCarrito()}>Agregar al carrito</button>
+            <button className="agregar" onClick={()=>agregarAlCarrito(item,cantidad)}>Agregar al carrito</button>
         </div>
     )
 }
