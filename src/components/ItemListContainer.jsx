@@ -3,6 +3,8 @@ import data from "../data/productos.json";
 import categoria from "../data/categoria.json";
 import ListaLocal from './Tienda/ListaLocal';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs } from "firebase/firestore";
+import {datab} from "../firebase/data";
 
 const ItemListContainer = () => {
 
@@ -12,26 +14,18 @@ const ItemListContainer = () => {
 
   let [titulo, setTitulo] = useState ("productos");
 
-  const pedirProductos = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => { resolve(data); 
-    },1000);
-  })
-}
-
   useEffect(() =>{
-    pedirProductos()
-    .then ((res) =>{
 
-      if (categoriaId){
-        setTitulo(categoria.find((cat)=>cat.id === categoriaId).nombre);
-        setProductos(res.filter((prod)=>prod.categoria.id === categoriaId));
-      }else {
-      setTitulo("productos");
-      setProductos(res);
-      }
+    const productosRef = collection(datab, "productos");
+    
+    getDocs(productosRef)
+    .then((resp) =>{
+      setProductos(resp.docs.map((doc) => {
+        return {
+        id: doc.id, ...doc.data()}
     })
-
+  )
+  })
   }, [categoriaId])
 
   return (
