@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import categoria from "../../data/categoria.json";
+import { collection, getDocs } from 'firebase/firestore';
+import { datab } from "../../firebase/data";
 
 
 const NavBar = () => {
+
+  let [categorias, setCategorias] = useState([]);
+
+  useEffect(() => {
+
+    const categoriasRef = collection(datab, "categoria");
+
+    getDocs(categoriasRef)
+      .then((res) => {
+        setCategorias(res.docs.map((doc) => {
+          return {id: doc.id, ...doc.data()}
+        }));
+      })
+  }, [])
 
   return (
     <nav className='navbar'>
@@ -16,13 +31,13 @@ const NavBar = () => {
             <NavLink className='nav-a' to="/productos">Productos</NavLink>
             <ul className='opciones'>
               {
-                categoria.map((categoria) => {
-                  return(
-                  <li key={categoria.id}>
-                    <NavLink to={`/categoria/${categoria.id}`} className="text-productos">
-                      {categoria.nombre}
-                    </NavLink>
-                  </li>)
+                categorias.map((categoria) => {
+                  return (
+                    <li key={categoria.id}>
+                      <NavLink to={`/categoria/${categoria.id}`} className="text-productos">
+                        {categoria.nombre}
+                      </NavLink>
+                    </li>)
                 })
               }
             </ul>

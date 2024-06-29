@@ -1,37 +1,49 @@
 import React, { useEffect, useState } from 'react';
-import data from "../data/productos.json";
-import categoria from "../data/categoria.json";
 import ListaLocal from './Tienda/ListaLocal';
 import { useParams } from 'react-router-dom';
-import { collection, getDocs } from "firebase/firestore";
-import {datab} from "../firebase/data";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { datab } from "../firebase/data";
 
 const ItemListContainer = () => {
 
-  const {categoriaId} = useParams();
+  const { categoriaId } = useParams();
+  let [productos, setProductos] = useState([]);
+  let [titulo, setTitulo] = useState("Productos");
 
-  let [productos,setProductos] =  useState([]);
-
-  let [titulo, setTitulo] = useState ("productos");
-
-  useEffect(() =>{
+  useEffect(() => {
 
     const productosRef = collection(datab, "productos");
-    
-    getDocs(productosRef)
-    .then((resp) =>{
-      setProductos(resp.docs.map((doc) => {
-        return {
-        id: doc.id, ...doc.data()}
-    })
-  )
-  })
-  }, [categoriaId])
+    const q = categoriaId ? query(productosRef, where("categoria.id", "==", categoriaId)) : productosRef;
+
+    const categoriasRef = collection(datab, "categoria");
+    let catQuery = categoriaId && query(categoriasRef, where("id", "==", categoriaId));
+
+    getDocs(q)
+      .then((resp) => {
+        setProductos(
+          resp.docs.map((doc) => {
+            return {
+              id: doc.id, ...doc.data()
+            }
+          })
+        )
+      })
+
+    if (catQuery) {
+      getDocs(catQuery)
+        .then((resp) => {
+          setTitulo(resp.docs[0].data().nombre);
+        })
+    } else {
+      setTitulo("Productos");
+    }
+
+  }, [categoriaId]);
 
   return (
     <div className='itemContainer'>
       <h2>{titulo}</h2>
-      <ListaLocal productos={productos}/>
+      <ListaLocal productos={productos} />
     </div>
   )
 }
