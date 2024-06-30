@@ -1,18 +1,21 @@
 import React, { useContext } from 'react'
 import { CartContext } from './context/CartContext'
+import { Link } from 'react-router-dom'
 
 const Carrito = () => {
 
-  const {carrito, calcularTotal, vaciarCarrito} = useContext(CartContext)
+  const {carrito, eliminarItem, calcularTotal, vaciarCarrito} = useContext(CartContext);
  
 
   return (
-    <div>
+    <div className='card'>
       {carrito.map((prod)=> (
         <div key={prod.id}>
       <h2>{prod.nombre}</h2>
-      <p>Unidades:{prod.cantidad} ({prod.precio}):$ {prod.precio* prod.cantidad}
+      <img src ={prod.imagen}/>
+      <p>Unidades:{prod.cantidad} (${prod.precio}):$ {prod.precio* prod.cantidad}
       </p>
+      <button onClick={() =>{ eliminarItem (prod)}}>eliminar</button>
 
       </div>
       ))}
@@ -21,6 +24,7 @@ const Carrito = () => {
         <>
       <h3>Total:${calcularTotal()}</h3>
       <button onClick={vaciarCarrito}>Vaciar</button>
+      <Link to="/finalizar-compra">Finalizar compra</Link>
       </>:
       <h3>Carrito vacío: /</h3>
       }

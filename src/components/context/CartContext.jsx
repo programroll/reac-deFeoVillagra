@@ -2,6 +2,7 @@ import { createContext,useEffect, useState } from "react"
 
 
 export const CartContext = createContext();
+
 const carritoInicial = JSON.parse(localStorage.getItem("carrito")) || [];
 
 export const CartProvider = ({ children }) => {
@@ -27,8 +28,12 @@ export const CartProvider = ({ children }) => {
         return carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
     }
 
+    const eliminarItem = (item) => {
+        setCarrito( carrito.filter(prod => prod.id !== item.id));
+    }
+
     const calcularTotal = () => {
-        return carrito.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0);
+        return carrito.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0).toFixed(2);
     }
 
     const vaciarCarrito = () => {
@@ -40,7 +45,7 @@ export const CartProvider = ({ children }) => {
     },[carrito]);
 
     return (
-        <CartContext.Provider value={{ carrito , calcularCantidad, calcularTotal, vaciarCarrito,agregarAlCarrito }}>
+        <CartContext.Provider value={{ carrito , calcularCantidad, eliminarItem, calcularTotal, vaciarCarrito,agregarAlCarrito }}>
             {children}
         </CartContext.Provider>
     )
