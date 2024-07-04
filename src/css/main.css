@@ -1,11 +1,11 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.header{
-  background-image: url(./public/header.webp) ;
+.header {
+  background-image: url(./public/header.webp);
   background-size: 100% 257%;
   background-repeat: no-repeat;
   width: 100%;
@@ -16,7 +16,7 @@
   padding: 1rem;
 }
 
-.navbar{
+.navbar {
   gap: 2rem;
   width: 100%;
   display: flex;
@@ -24,58 +24,59 @@
   align-items: center;
 }
 
-.menu{
+.menu {
   width: inherit;
 }
 
-.nav-list{
+.nav-list {
   list-style-type: none;
   max-width: 100%;
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   gap: .5rem;
 }
 
-.nav-a{
+.nav-a {
   text-decoration: none;
   color: #f0f0d8;
   font-size: xx-large;
 }
 
-.nav-a.active{
+.nav-a.active {
   font-weight: bold;
 
 }
 
-.carrito{
+.carrito {
   width: 5rem;
 }
 
-.logo{
+.logo {
   border-radius: 50% 50%;
 }
 
 
-.opciones-container{
+.opciones-container {
   position: relative;
 
 }
 
-.opciones-container:hover .opciones{
+.opciones-container:hover .opciones {
   display: block;
 }
-.opciones{
+
+.opciones {
   text-decoration: none;
   display: none;
-  background-color:#967c52;
+  background-color: #967c52;
   border-radius: 0 0 10px 10px;
   list-style-type: none;
   text-align: center;
-  
+
 
 }
 
-.text-productos{
+.text-productos {
   text-decoration: none;
   color: #f0f0d8;
 }
@@ -85,40 +86,40 @@
   transition: .2s;
 }
 
-.foto-cafe{
+.foto-cafe {
   float: left;
   width: 30rem;
   height: 15rem;
   margin: 1rem;
 }
 
-.productos{
-  background-color:#F7EDE6;
+.productos {
+  background-color: #F7EDE6;
   margin-bottom: auto;
   display: flex;
   justify-content: center;
 }
 
-.footer{
+.footer {
   display: flex;
   justify-content: end;
 }
 
-.itemContainer{
+.itemContainer {
   width: 100%;
   height: auto;
 
 }
 
-.listaProductos{
+.listaProductos {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
-  gap:3rem;
+  gap: 3rem;
   margin: 5rem;
 }
 
-.card{
+.card {
   width: 15rem;
   height: 18rem;
   display: flex;
@@ -126,50 +127,52 @@
   align-items: center;
 }
 
-.card img{
+.card img {
   width: 100%;
   height: 10rem;
 }
 
-.item-detail{
+.item-detail {
   margin: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.detail{
+.detail {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: start;
   width: 50%;
 
 }
-.detail img{
-  grid-column:1;
+
+.detail img {
+  grid-column: 1;
   width: 100%;
   max-width: 200px;
   height: auto;
 }
 
-.detail h2, .descripcion {
-  grid-column:2;
-  margin:auto;
+.detail h2,
+.descripcion {
+  grid-column: 2;
+  margin: auto;
   width: 100%;
 }
 
-.precio{
+.precio {
   font-size: 1.5rem;
   font-weight: bold;
   margin: auto;
 }
 
-.item-count{
+.item-count {
   display: flex;
   flex-direction: column;
 }
 
-.count{
+.count {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,8 +180,9 @@
   margin-top: 1rem;
 }
 
-.count button, .agregar {
- display: flex;
+.count button,
+.agregar {
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #967c52;
@@ -193,38 +197,186 @@
   transition: .2s;
 }
 
-.count button:hover, .agregar:hover{
-  background-color: #ffecd1 ;
+.count button:hover,
+.agregar:hover {
+  background-color: #ffecd1;
   color: black;
 }
 
-.agregar{
+.agregar {
   width: auto;
   height: auto;
   margin-top: 1rem;
   padding: 1rem;
 }
 
-.nosotros{
-  margin:1rem
+.lista{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.foto-plantacion{
-  float:right;
+.contenido {
+  display: grid;
+  gap: 5px;
+  padding: 20px;
+  max-width: 450px;
+  width: 100%;
+}
+
+.producto {
+  display: grid;
+  grid-template-areas:
+    "nombre nombre"
+    "imagen detalles"
+    "imagen eliminar"
+  ;
+  grid-template-columns: 150px 1fr;
+  gap: 10px;
+  padding: 10px;
+  background-color: #967c52;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.nombre{
+  grid-area: nombre;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.imagen{
+  grid-area: imagen;
+  width: 100%;
+  height: 130px;
+}
+.eliminar{
+  grid-area: eliminar;
+  
+}
+.boton{
+  width: 150px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0d8;
+  color: rgb(103, 76, 13);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.boton:hover{
+  background-color: #ffecd1;
+}
+
+.detalles{
+  grid-area: detalles;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.detalles p{
+  margin: 0;
+  padding: 0;
+}
+.finalizar{
+  grid-area: finalizar;
+  text-decoration: none;
+  list-style-type: none;
+  text-align: center;
+}
+
+.pago{
+  display: grid;
+  grid-template-areas:
+    "total total"
+    "vaciar medios_pago"
+    "finalizar medios_pago"
+  ;
+  grid-template-columns: 150px 1fr;
+  gap: 10px;
+  padding: 10px;
+  background-color: #967c52;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: auto;
+  max-width: 500px;
+  width: 100%;
+}
+.total{
+  grid-area: total;
+}
+.vaciar{
+  grid-area: vaciar;
+}
+.medios_pago{
+  grid-area: medios_pago;
+  width: 100%;
+  height: 80px;
+}
+
+.formulario{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cont-formulario{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #967c52;
+  box-shadow: 0 0 10px rgb(111, 92, 92);
+  border-radius: 10px;
+  width: 500px;
+  height: auto;
+  gap: 5px;
+  padding: 5px;
+}
+
+.form-completo{
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100%;
+}
+
+.form-completo input{
+  width:100%;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  
+}
+.form-completo label{
+  display: block;
+}
+
+
+.nosotros {
+  margin: 1rem
+}
+
+.foto-plantacion {
+  float: right;
   width: 30rem;
   height: 15rem;
   margin-right: 1rem;
-  
+
 }
 
-.historia{
+.historia {
   margin-top: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
 }
-.historia p{
-  font-size:larger;
+
+.historia p {
+  font-size: larger;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-  
+
 }

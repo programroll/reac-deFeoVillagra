@@ -4,31 +4,36 @@ import { Link } from 'react-router-dom'
 
 const Carrito = () => {
 
-  const {carrito, eliminarItem, calcularTotal, vaciarCarrito} = useContext(CartContext);
- 
+  const { carrito, eliminarItem, calcularTotal, vaciarCarrito } = useContext(CartContext);
+
 
   return (
-    <div className='card'>
-      {carrito.map((prod)=> (
-        <div key={prod.id}>
-      <h2>{prod.nombre}</h2>
-      <img src ={prod.imagen}/>
-      <p>Unidades:{prod.cantidad} (${prod.precio}):$ {prod.precio* prod.cantidad}
-      </p>
-      <button onClick={() =>{ eliminarItem (prod)}}>eliminar</button>
+    <div className="lista">
+      <div className='contenido'>
+        {carrito.map((prod) => (
+          <div className='producto' key={prod.id}>
+            <h2 className='nombre'>{prod.nombre}</h2>
+            <img className='imagen' src={prod.imagen} />
+            <p className='detalles'>Unidades:{prod.cantidad} (${prod.precio}):$ {prod.precio * prod.cantidad}
+            </p>
+            <button className='eliminar boton' onClick={() => { eliminarItem(prod) }}>Eliminar</button>
 
+          </div>
+        ))}
+        {
+          carrito.length > 0 ?
+            <div className="pago">
+
+              <h3 className='total'>Total:${calcularTotal()}</h3>
+              <button onClick={vaciarCarrito} className='boton vaciar' >Vaciar</button>
+              <Link to="/finalizar-compra" className='boton finalizar'>Finalizar compra</Link>
+              <img className='medios_pago' src="../../public/pago-seguro-argentina-1-1.webp" alt="medios" />
+
+            </div> :
+            <h3>Carrito vacío: /</h3>
+        }
       </div>
-      ))}
-      {
-        carrito.length > 0 ?
-        <>
-      <h3>Total:${calcularTotal()}</h3>
-      <button onClick={vaciarCarrito}>Vaciar</button>
-      <Link to="/finalizar-compra">Finalizar compra</Link>
-      </>:
-      <h3>Carrito vacío: /</h3>
-      }
-      </div>
+    </div>
   )
 }
 
