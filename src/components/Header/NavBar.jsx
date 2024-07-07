@@ -46,7 +46,7 @@ const NavBar = () => {
       </div >
       <div>
         <Link to="/">
-          <img src="./Preview.webp" alt="logo" className='logo' />
+          <img src="./logo.webp" alt="logo" className='logo' />
         </Link>
       </div>
       <div className='menu'>

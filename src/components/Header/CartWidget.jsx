@@ -9,8 +9,8 @@ const CartWidget = () => {
 
     return (
         <Link className='carrito' to="/carrito">
-            <Basket2 color='#f0f0d8' size={35}/>
-            <span>{calcularCantidad()}</span>
+            <Basket2 color='#533921' size={35}/>
+            <span className='car-cantidad'>{calcularCantidad()}</span>
         </Link>
     )
 }
