@@ -4,23 +4,20 @@
   box-sizing: border-box;
 }
 
-body{
-/*background: linear-gradient(to top, #a07335, #edd8af); */
-background-image: url(../../public/fondo-cafe1.webp) ;
-background-size: cover;
+body {
+  background-image: url(../../public/fondo-cafe1.webp);
+  background-size: cover;
   background-repeat: no-repeat;
- 
-
-
 }
 
 .header {
-  width: 100%;
+  max-width: 100%;
   height: 250px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 1rem;
+  margin-bottom: 1rem;
+
 }
 
 .navbar {
@@ -29,24 +26,30 @@ background-size: cover;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
 }
 
 .menu {
-  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
+
 
 .nav-list {
   list-style-type: none;
   max-width: 100%;
   display: flex;
   justify-content: space-evenly;
-  gap: .5rem;
+  gap: 5rem;
 }
 
 .nav-a {
   text-decoration: none;
   color: #533921;
-  font-size: xx-large;
+  font-size: x-large;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .nav-a.active {
@@ -54,11 +57,8 @@ background-size: cover;
 
 }
 
-.carrito {
-  width: 5rem;
-}
 
-.car-cantidad{
+.car-cantidad {
   text-decoration: none;
   color: #533921;
   font-size: x-large;
@@ -66,8 +66,8 @@ background-size: cover;
 }
 
 .logo {
-  width: 14rem;
-  height: 15rem;
+  width: 200px;
+  height: 240px;
 }
 
 
@@ -85,14 +85,16 @@ background-size: cover;
   padding: 20px;
   text-decoration: none;
   display: none;
-  background-color: #804C49;
+  background-color: #533921;
   border-radius: 0 0 10px 10px;
   list-style-type: none;
   text-align: center;
-  
+  font-family: "Josefin Sans", sans-serif;
+
 }
+
 .opciones li {
-  margin-top: 3px;
+  margin-top: 1rem;
 }
 
 .text-productos {
@@ -105,13 +107,6 @@ background-size: cover;
   transition: .2s;
 }
 
-.foto-cafe {
-  float: left;
-  width: 30rem;
-  height: 15rem;
-  margin: 1rem;
-}
-
 .productos {
   background-color: #F7EDE6;
   margin-bottom: auto;
@@ -119,16 +114,28 @@ background-size: cover;
   justify-content: center;
 }
 
-.footer {
-  display: flex;
-  justify-content: end;
-}
-
 .itemContainer {
   width: 100%;
   height: auto;
+}
+
+.card-h2 {
+  text-align: center;
+  /*font-family: "Junge", cursive;*/
+  font-size: 25px;
+  font-family: "Josefin Sans", sans-serif;
 
 }
+
+.junge-regular {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+  font-style: oblique;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
 
 .listaProductos {
   display: grid;
@@ -140,15 +147,27 @@ background-size: cover;
 
 .card {
   width: 15rem;
-  height: 18rem;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-color: #f0f0d8;
+  border-style: outset;
+  border-radius: 1rem;
+  opacity: 1;
 }
 
 .card img {
   width: 100%;
   height: 10rem;
+}
+
+.ver-prod {
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 0;
+  font-family: "Josefin Sans", sans-serif;
+  color: #ffecd1;
 }
 
 .item-detail {
@@ -204,7 +223,7 @@ background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #804C49;
+  background-color: #533921;
   border: 0;
   width: 2rem;
   height: 2rem;
@@ -229,7 +248,7 @@ background-size: cover;
   padding: 1rem;
 }
 
-.lista{
+.lista {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,61 +272,66 @@ background-size: cover;
   grid-template-columns: 150px 1fr;
   gap: 10px;
   padding: 10px;
-  background-color: #804C49;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+
 }
-.nombre{
+
+.nombre {
   grid-area: nombre;
   font-size: 18px;
   font-weight: bold;
 }
 
-.imagen{
+.imagen {
   grid-area: imagen;
   width: 100%;
   height: 130px;
 }
-.eliminar{
+
+.eliminar {
   grid-area: eliminar;
-  
+
 }
-.boton{
+
+.boton {
   width: 150px;
   margin-top: 10px;
+  margin-bottom: 5px;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
-  background-color: #f0f0d8;
-  color: rgb(103, 76, 13);
+  background-color: #533921;
+  color: #ffecd1;
   font-size: 14px;
   cursor: pointer;
+  font-family: "Josefin Sans", sans-serif;
 }
 
-.boton:hover{
+.boton:hover {
   background-color: #ffecd1;
+  color: #533921;
 }
 
-.detalles{
+.detalles {
   grid-area: detalles;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 10px;
 }
 
-.detalles p{
+.detalles p {
   margin: 0;
   padding: 0;
 }
-.finalizar{
+
+.finalizar {
   grid-area: finalizar;
   text-decoration: none;
   list-style-type: none;
   text-align: center;
 }
 
-.pago{
+.pago {
   display: grid;
   grid-template-areas:
     "total total"
@@ -317,32 +341,49 @@ background-size: cover;
   grid-template-columns: 150px 1fr;
   gap: 10px;
   padding: 10px;
-  background-color: #804C49;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  /*background-color: #804C49;*/
   margin: auto;
   max-width: 500px;
   width: 100%;
 }
-.total{
+
+.total {
   grid-area: total;
 }
-.vaciar{
+
+.vaciar {
   grid-area: vaciar;
 }
-.medios_pago{
+
+.medios_pago {
   grid-area: medios_pago;
   width: 100%;
   height: 80px;
 }
 
-.formulario{
+.carrito-cuadrado {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.vacio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.carrito-cuadrado h3 {
+  text-align: center;
+}
+
+.formulario {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-.cont-formulario{
+.cont-formulario {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -356,46 +397,160 @@ background-size: cover;
   padding: 5px;
 }
 
-.form-completo{
+.form-completo {
   margin-left: 20px;
   margin-right: 20px;
   width: 100%;
 }
 
-.form-completo input{
-  width:100%;
+.form-completo input {
+  width: 100%;
   padding-left: 5px;
   border-radius: 5px;
   border: none;
   font-size: 1rem;
-  
+
 }
-.form-completo label{
+
+.form-completo label {
   display: block;
 }
 
-
-.nosotros {
-  margin: 1rem
+.foto-cafe {
+  height: 450px;
+  background-image: url(../../public/cafe.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
 
-.foto-plantacion {
-  float: right;
-  width: 30rem;
-  height: 15rem;
-  margin-right: 1rem;
+.foto-cafe h1 {
+  font-family: "Junge", cursive;
+  text-align: center;
+  position: relative;
+  top: 80px;
+  left: 125px;
+  font-size: 44px;
+  width: 312px;
+  height: 106px;
+  text-shadow: 6px 2px 3px #533921;
+}
+
+.foto-cafe h3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  position: relative;
+  top: 90px;
+  left: 162px;
+  font-size: 31px;
+  width: 292px;
+  height: 35px;
 
 }
 
-.historia {
-  margin-top: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+.foto-cafe button {
+  position: relative;
+  top: 124px;
+  left: 162px;
+  width: 240px;
+  height: 60px;
+  font-size: 22px;
 }
 
-.historia p {
-  font-size: larger;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.encabezado {
+  color: #E2CAC4;
+}
+
+.experiencia {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  height: 450px;
+  width: 80%;
+  position: relative;
+  left: 10%;
+}
+
+.experiencia img {
+  width: 50%;
+  clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
+}
+
+.expe-histo {
+  font-family: "Josefin Sans", sans-serif;
+  max-width: 50%;
+  height: 170px;
+  position: relative;
+  top: 85px;
+  right: 25px;
+  padding: 1rem;
+}
+.expe-histo p {
+  font-size: 25px;
+}
+
+.expe-histo button {
+  position: relative;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  font-size: 22px;
+
+}
+
+.footer {
+  display: grid;
+  grid-template-areas:
+    "pagos pagos pagos"
+    "contacto redes desarrollador"
+  ;
+  grid-template-columns: 600px 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: space-evenly;
+  padding: 0px 20px 15px 20px;
+  width: 100%;
+  margin-top: 3rem;
+  box-shadow: 0 -5px 10px #ffecd1;
+  border: 1px solid #ffecd1;
+}
+
+.contacto {
+  grid-area: contacto;
+  margin-top:.5rem ;
+
+}
+.contacto div{
+  display: flex;
+  padding-top: .5rem;
+}
+.div-p{
+  padding-left: .5rem;
+}
+
+.redes {
+  grid-area: redes;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between ;
+  width: 150px;
+  margin-top:.5rem ;
+}
 
 
+.desarrollador {
+  grid-area: desarrollador;
+  margin-top:.5rem ;
+}
+
+.pagos {
+  grid-area: pagos;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagos img {
+  width: 300px;
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { collection, getDocs } from 'firebase/firestore';
 import { datab } from "../../firebase/data";
+import CartWidget from './CartWidget';
 
 
 const NavBar = () => {
@@ -44,11 +45,13 @@ const NavBar = () => {
           </li>
         </ul>
       </div >
+      
       <div>
         <Link to="/">
           <img src="./logo.webp" alt="logo" className='logo' />
         </Link>
       </div>
+
       <div className='menu'>
         <ul className='nav-list'>
           <li>
@@ -58,6 +61,7 @@ const NavBar = () => {
             <Link className='nav-a' to="#">Contacto</Link>
           </li>
         </ul>
+        <CartWidget/>
       </div>
     </nav >
   )

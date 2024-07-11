@@ -1,21 +1,26 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Nosotros = () => {
   return (
     <div className='nosotros'>
-      <img src="../public/cafe.webp" alt="cafe" className='foto-cafe' />
 
-      <div className="historia">
-      <p>Hace setenta años, en los exuberantes campos de Argentina, la familia Silva se embarcó en un viaje que cambiaría el panorama del café en el país. Inspirados por su pasión por el café y su amor por la tierra, fundaron Nacional Coffee, una pequeña empresa familiar dedicada a cultivar, tostar y moler los granos de café con un cuidado y una dedicación sin igual.</p>
-      <p>Con el tiempo, Nacional Coffee se convirtió en un nombre venerado en el mundo del café. La familia Silva, generación tras generación, perfeccionó su arte, explorando las ricas tierras argentinas en busca de los granos más excepcionales. Fue entonces cuando descubrieron tres joyas ocultas en la geografía de Argentina: la majestuosa Alta Montaña, la misteriosa Selva Misionera y la serena costa del Litoral.
-      </p>
+      <div className="foto-cafe">
+        <h1 className='encabezado'>NATIONAL <br /> COFFE</h1>
+        <h3 className='encabezado'>Sabor Auténtico</h3>
+        <Link to="/productos" >
+          <button className='boton'>¡Descubrilo!</button>
+        </Link>
       </div>
-      <div className="historia">
-      <img src="../public/plantacion.webp" alt="plantacion" className='foto-plantacion'/>
-      <p>Cada región ofrecía su propio tesoro de sabores únicos, y la familia Silva decidió especializarse en estas tres variedades distintivas: Alta Montaña, Selva Misionera y Litoral. Cada grano de café llevaba consigo el sello de su origen, desde las alturas imponentes de la montaña hasta los exuberantes bosques tropicales y las suaves brisas costeras.</p>
-  
-      <p>A lo largo de los años, Nacional Coffee no solo se convirtió en un referente en Argentina, sino que también trascendió fronteras, ganándose el corazón de los amantes del café en todo el mundo. Su compromiso con la calidad, la tradición y la autenticidad los convirtió en una institución venerada en la industria cafetera.</p>
-      <p>Hoy, la familia Silva sigue al frente de Nacional Coffee, manteniendo viva la llama de su legado. Cada taza de café que lleva el nombre de Nacional Coffee es un tributo a su pasión, dedicación y amor por el arte del café, una tradición que perdura en el tiempo y que continúa deleitando a los paladares más exigentes en todo el mundo.</p>
+      <div className="experiencia carrito-cuadrado">
+      <img src="../public/experiencia.webp" alt="experiencia"/>
+      <div className="expe-histo">
+        <p>Desde hace setenta años, la familia Silva ha transformado el panorama del café en Argentina con Nacional Coffee.
+        Especializándose en las variedades únicas de Alta Montaña, Selva Misionera y Litoral, han llevado la calidad y la autenticidad a nuevas alturas, convirtiéndose en un nombre venerado tanto a nivel nacional como internacional. Hoy, su legado perdura, deleitando a los amantes del café en todo el mundo.</p>
+        <Link to="/">
+        <button className='boton'>Elegí tu experiencia</button>
+        </Link>
+        </div>
       </div>
     </div>
   )

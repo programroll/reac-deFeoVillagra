@@ -36,4 +36,6 @@ Formularios
 
 npm install-react-hook-form
 
+Íconos
 
+npm i bootstrap-icons

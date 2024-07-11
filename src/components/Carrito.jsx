@@ -11,7 +11,7 @@ const Carrito = () => {
     <div className="lista">
       <div className='contenido'>
         {carrito.map((prod) => (
-          <div className='producto' key={prod.id}>
+          <div className='producto carrito-cuadrado' key={prod.id}>
             <h2 className='nombre'>{prod.nombre}</h2>
             <img className='imagen' src={prod.imagen} />
             <p className='detalles'>Unidades:{prod.cantidad} (${prod.precio}):$ {prod.precio * prod.cantidad}
@@ -22,15 +22,21 @@ const Carrito = () => {
         ))}
         {
           carrito.length > 0 ?
-            <div className="pago">
+            <div className="pago carrito-cuadrado">
 
-              <h3 className='total'>Total:${calcularTotal()}</h3>
+              <h3 className='total '>Total:${calcularTotal()}</h3>
               <button onClick={vaciarCarrito} className='boton vaciar' >Vaciar</button>
               <Link to="/finalizar-compra" className='boton finalizar'>Finalizar compra</Link>
               <img className='medios_pago' src="../../public/pago-seguro-argentina-1-1.webp" alt="medios" />
 
             </div> :
-            <h3>Carrito vacío: /</h3>
+            <div className="carrito-cuadrado vacio">
+              <h3>Carrito vacío: /</h3>
+              <Link to="/productos" >
+              <button className='boton'>Ir a productos</button>
+              </Link>
+            </div>
+            
         }
       </div>
     </div>
