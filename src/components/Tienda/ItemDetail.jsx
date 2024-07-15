@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+
 import ItemCount from './ItemCount'
 
 const ItemDetail = ({ item }) => {

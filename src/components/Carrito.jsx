@@ -1,12 +1,14 @@
 import React, { useContext } from 'react'
 import { CartContext } from './context/CartContext'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
+
+
 
 const Carrito = () => {
 
   const { carrito, eliminarItem, calcularTotal, vaciarCarrito } = useContext(CartContext);
 
-
+  
   return (
     <div className="lista">
       <div className='contenido'>
@@ -36,10 +38,11 @@ const Carrito = () => {
               <button className='boton'>Ir a productos</button>
               </Link>
             </div>
-            
         }
       </div>
+      
     </div>
+    
   )
 }
 

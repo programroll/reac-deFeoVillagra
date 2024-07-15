@@ -44,6 +44,8 @@ export const CartProvider = ({ children }) => {
         localStorage.setItem("carrito", JSON.stringify(carrito));
     },[carrito]);
 
+    
+
     return (
         <CartContext.Provider value={{ carrito , calcularCantidad, eliminarItem, calcularTotal, vaciarCarrito,agregarAlCarrito }}>
             {children}
