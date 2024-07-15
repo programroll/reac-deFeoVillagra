@@ -29,7 +29,7 @@ const Carrito = () => {
               <h3 className='total '>Total:${calcularTotal()}</h3>
               <button onClick={vaciarCarrito} className='boton vaciar' >Vaciar</button>
               <Link to="/finalizar-compra" className='boton finalizar'>Finalizar compra</Link>
-              <img className='medios_pago' src="public/pago-seguro-argentina-1-1.webp" alt="medios" />
+              <img className='medios_pago' src="pago-seguro-argentina-1-1.webp" alt="medios" />
 
             </div> :
             <div className="carrito-cuadrado vacio">
