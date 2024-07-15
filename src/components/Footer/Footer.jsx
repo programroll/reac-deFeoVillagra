@@ -25,7 +25,7 @@ const Footer = () => {
                 </a>
             </div>
             <div className="pagos">
-                <img src="./public/pago-seguro-argentina-1-1.webp" alt="pago" />
+                <img src="public/pago-seguro-argentina-1-1.webp" alt="pago" />
             </div>
 
             <div className="desarrollador">
