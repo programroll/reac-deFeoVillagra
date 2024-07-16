@@ -29,15 +29,18 @@ const Checkout = () => {
 
     if(docId){
         return(
-            <>
+            <div className="lista">
+            <div className="carrito-cuadrado saludo">
             <h2>Gracias por tu compra :)!</h2>
-            <p>Podes hacer el seguimiento con este codigo: {docId}</p>
-            </>
+            <p className='codigo'>Podes hacer el seguimiento con este codigo: {docId}</p>
+            </div>
+            </div>
         )
     }
 
     return (
-        <div className='formulario'>
+        <div className="lista">
+        <div className='carrito-cuadrado formulario'>
             <form onSubmit={handleSubmit(comprar)}className='cont-formulario'>
                 <h3>Ingrese sus datos para finalizar su compra</h3>
                 <div className='form-completo'>
@@ -50,6 +53,7 @@ const Checkout = () => {
                 </div>
                 <button type='submit' className='boton'>Comprar</button>
             </form>
+        </div>
         </div>
     )
 }

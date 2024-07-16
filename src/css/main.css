@@ -380,7 +380,10 @@ body {
 .formulario {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
+  width: 100%;
+  max-width: 700px;
 }
 
 .cont-formulario {
@@ -388,13 +391,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #804C49;
-  box-shadow: 0 0 10px rgb(111, 92, 92);
-  border-radius: 10px;
   width: 500px;
   height: auto;
-  gap: 5px;
+  gap: 25px;
   padding: 5px;
+  font-family: "Josefin Sans";
 }
 
 .form-completo {
@@ -409,11 +410,19 @@ body {
   border-radius: 5px;
   border: none;
   font-size: 1rem;
-
 }
 
 .form-completo label {
   display: block;
+}
+
+.saludo{
+  height: auto;
+  padding: 5px;
+  font-family: "Josefin Sans";
+}
+.saludo h2, .codigo{
+  margin: 1rem;
 }
 
 .foto-cafe {
@@ -523,10 +532,10 @@ body {
 }
 .contacto div{
   display: flex;
-  padding-top: .5rem;
+  align-items: center;
 }
 .div-p{
-  padding-left: .5rem;
+  padding-left: 5px;
 }
 
 .redes {
@@ -536,6 +545,7 @@ body {
   justify-content:space-between ;
   width: 150px;
   margin-top:.5rem ;
+  height: max-content;
 }
 
 
